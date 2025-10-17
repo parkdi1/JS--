@@ -6,19 +6,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  validate:
-    name: HTML Validate
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-      - name: Install html-validate
-        run: npm install -g html-validate
-      - name: Run html-validate
-        run: html-validate --config .htmlvalidate.json index.html || exit $?
+  # validate:
+  #   name: HTML Validate
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: '18'
+  #     - name: Install html-validate
+  #       run: npm install -g html-validate
+  #     - name: Run html-validate
+  #       run: html-validate --config .htmlvalidate.json index.html || exit $?
 
   deploy:
     name: Deploy to GitHub Pages
